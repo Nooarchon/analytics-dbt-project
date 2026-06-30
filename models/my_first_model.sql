@@ -1,3 +1,2 @@
-select *
-from {{ ref('jaffle_shop_orders') }}
-limit 10
+select 1 as id
+``

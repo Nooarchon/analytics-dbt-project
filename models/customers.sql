@@ -5,7 +5,7 @@ with customers as (
         first_name,
         last_name
 
-    from {{ ref('jaffle_shop_customers') }}
+    from {{ ref('stg_jaffle_shop__customers') }}
 
 ),
 
@@ -17,7 +17,7 @@ orders as (
         order_date,
         status
 
-    from {{ ref('jaffle_shop_orders') }}
+    from {{ ref('stg_jaffle_shop__orders') }}
 
 ),
 

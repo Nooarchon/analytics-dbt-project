@@ -1,4 +1,4 @@
-name: 'analytics'
+name: 'jaffle_shop'
 version: '1.0'
 config-version: 2
 
@@ -7,9 +7,9 @@ profile: 'default'
 model-paths: ["models"]
 
 models:
-  analytics:
-    +materialized: view
+  jaffle_shop:
+    staging:
+      +materialized: view
 
-seeds:
-  analytics:
-    +schema: jaffle_shop
+    marts:
+      +materialized: table

@@ -9,3 +9,7 @@ model-paths: ["models"]
 models:
   analytics:
     +materialized: view
+
+seeds:
+  analytics:
+    +schema: jaffle_shop

@@ -1,6 +1,7 @@
 select
+    id as payment_id,
     orderid as order_id,
+    paymentmethod as payment_method,
+    status,
     amount
-
-from {{ ref('stripe_payments') }}
-where status = 'success'
+from {{ source('stripe', 'STRIPE_PAYMENTS') }}

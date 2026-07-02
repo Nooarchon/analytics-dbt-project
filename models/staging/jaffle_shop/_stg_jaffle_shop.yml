@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: stg_stripe__payments
+    description: Staged Stripe payment data.
+
+    columns:
+      - name: payment_id
+        description: Primary key for a payment.
+
+      - name: order_id
+        description: Foreign key to an order.
+
+      - name: payment_method
+        description: Payment method used by the customer.
+
+      - name: status
+        description: Current payment status.
+
+      - name: amount
+        description: Payment amount.

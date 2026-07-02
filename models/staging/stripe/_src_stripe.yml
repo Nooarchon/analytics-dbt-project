@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: stripe
+    database: DBT_DB
+    schema: DBT_JMELIK_JAFFLE_SHOP
+
+    tables:
+      - name: STRIPE_PAYMENTS

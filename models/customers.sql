@@ -1,7 +1,7 @@
 with customers as (
 
     select
-        id as customer_id,
+        customer_id,
         first_name,
         last_name
 
@@ -12,8 +12,8 @@ with customers as (
 orders as (
 
     select
-        id as order_id,
-        user_id as customer_id,
+        order_id,
+        customer_id,
         order_date,
         status
 
@@ -47,8 +47,10 @@ final as (
 
     from customers
 
-left join customer_orders
-    on customers.customer_id = customer_orders.customer_id
+    left join customer_orders
+        on customers.customer_id = customer_orders.customer_id
+
 )
 
-select * from final
+select *
+from final

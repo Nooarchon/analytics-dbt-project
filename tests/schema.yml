@@ -1,0 +1,49 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: Cleansed table for the customers
+
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: customer_id
+        data_type: number
+        description: The id of the customer. This is the primary key.
+        tests:
+          - not_null:
+              config:
+                severity: error
+          - unique:
+              config:
+                severity: error
+
+      - name: first_name
+        data_type: varchar
+        description: The name of the customer
+        tests:
+          - not_null:
+              config:
+                severity: warn
+
+      - name: last_name
+        data_type: varchar
+        description: The lastname of the customer
+        tests:
+          - not_null
+
+      - name: first_order_date
+        data_type: date
+        description: The first order date of the customer's order
+
+      - name: most_recent_order_date
+        data_type: date
+        description: The most recent order date of the customer's order
+
+      - name: number_of_orders
+        data_type: number
+
+      - name: lifetime_value
+        data_type: number
